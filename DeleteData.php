@@ -2,11 +2,11 @@
 <html>
 <body>
 
-<h1>INSERT DATA TO DATABASE</h1>
+<h1>DELETE DATA IN DATABASE</h1>
 
 <?php
 ini_set('display_errors', 1);
-echo "Insert database!";
+echo "Delete in database!";
 ?>
 
 <?php
@@ -28,7 +28,7 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "DELETE FROM student WHERE stuid = 'SV02'";
+$sql = "DELETE FROM customer WHERE cútomerid = 'cus01'";
 $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
     echo "Record deleted successfully.";

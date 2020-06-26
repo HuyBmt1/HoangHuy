@@ -6,7 +6,7 @@
 
 <?php
 ini_set('display_errors', 1);
-echo "Hello Cloud computing class 0818!";
+echo "Welcome to ATN SHOP";
 ?>
 
 <?php
@@ -16,7 +16,7 @@ if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
     $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 }  else {
-     echo '<p>The DB exists</p>';
+     echo '<p>The Database exist</p>';
      echo getenv("dbname");
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
@@ -29,23 +29,23 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "SELECT * FROM student ORDER BY stuid";
+$sql = "SELECT * FROM customer ORDER BY customerid";
 $stmt = $pdo->prepare($sql);
 //Thiết lập kiểu dữ liệu trả về
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
-echo '<p>Students information:</p>';
+echo '<p>Customer Information</p>';
 
 ?>
 <div id="container">
 <table class="table table-bordered table-condensed">
     <thead>
       <tr>
-        <th>Student ID</th>
-        <th>Name</th>
-        <th>email</th>
-        <th>Class</th>
+        <th>Customers</th>
+        <th>Customers name</th>
+        <th>Customers address</th>
+        <th>Customers phone</th>
       </tr>
     </thead>
     <tbody>
@@ -56,10 +56,10 @@ echo '<p>Students information:</p>';
       ?>
    
       <tr>
-        <td scope="row"><?php echo $row['stuid'] ?></td>
-        <td><?php echo $row['fname'] ?></td>
-        <td><?php echo $row['email'] ?></td>
-        <td><?php echo $row['classname'] ?></td>
+        <td scope="row"><?php echo $row['customerid'] ?></td>
+        <td><?php echo $row['customername'] ?></td>
+        <td><?php echo $row['diachi'] ?></td>
+        <td><?php echo $row['dienthoai'] ?></td>
         
       </tr>
      

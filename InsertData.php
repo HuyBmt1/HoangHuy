@@ -14,10 +14,10 @@ list-style: none;
 <h2>Enter data into student table</h2>
 <ul>
     <form name="InsertData" action="InsertData.php" method="POST" >
-<li>Student ID:</li><li><input type="text" name="StudentID" /></li>
-<li>Full Name:</li><li><input type="text" name="fname" /></li>
-<li>Email:</li><li><input type="text" name="email" /></li>
-<li>Class:</li><li><input type="text" name="classname" /></li>
+<li>Customers ID</li><li><input type="text" name="customerid" /></li>
+<li>Customers Name</li><li><input type="text" name="customername" /></li>
+<li>Customer Address</li><li><input type="text" name="diachi" /></li>
+<li>Customers Phone</li><li><input type="text" name="dienthoai" /></li>
 <li><input type="submit" /></li>
 </form>
 </ul>
@@ -53,12 +53,12 @@ if($pdo === false){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "INSERT INTO student(stuid, fname, email, classname)"
-        . " VALUES('$_POST[StudentID]','$_POST[fname]','$_POST[email]','$_POST[classname]')";
+$sql = "INSERT INTO customer(customerid, customername, diachi, dienthoai)"
+        . " VALUES('$_POST[customerid]','$_POST[customername]','$_POST[diachi]','$_POST[dienthoai]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
- if (is_null($_POST[StudentID])) {
-   echo "StudentID must be not null";
+ if (is_null($_POST[customerid])) {
+   echo "customerid must be not null";
  }
  else
  {

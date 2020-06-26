@@ -41,7 +41,7 @@ if (empty(getenv("DATABASE_URL"))){
 
         // return the number of row affected
         //return $stmt->rowCount();
-$sql = "UPDATE student SET fname = 'Lee Chan Do' WHERE stuid = 'SV02'";
+$sql = "UPDATE customer SET customername = 'thanh long' WHERE customerid = 'SV02'";
       $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
     echo "Record updated successfully.";

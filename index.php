@@ -29,6 +29,10 @@
 <body>
     <!-- =====  HEADER START  ===== -->
     <header id="header">
+        <a href="ConnectToDB.php">Connect to database</a>
+        <a href="InsertData.php">Insert to database</a>
+        <a href="DeleteData.php">Delete in database</a>
+        <a href="UpdateData.php">Update database</a>
       <div class="header-top">
         <div class="container">
           <div class="row">
